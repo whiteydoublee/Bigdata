@@ -22,6 +22,9 @@ while True:
     viewday=''
     span_viewday = browser.find_element_by_css_selector('#main_content > div.pagenavi_day > span.viewday')
     viewday = span_viewday.text
+
+    if viewday =='12월31일' : #viewday가 12월 31일이면
+        break
     print('%s 수집시작' % viewday)
 
     while True:
@@ -56,7 +59,6 @@ while True:
                 j+=1
 
             break
-
 
 #브라우저 종료
 browser.quit()
